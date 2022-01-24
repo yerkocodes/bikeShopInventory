@@ -1,0 +1,19 @@
+{
+  "name": "bikeshopweb",
+  "version": "1.0.0",
+  "description": "Bikeshop catalog inventory ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yerkodigo/bikeShopInventory.git"
+  },
+  "author": "Yerko Cortes Baeza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yerkodigo/bikeShopInventory/issues"
+  },
+  "homepage": "https://github.com/yerkodigo/bikeShopInventory#readme"
+}
