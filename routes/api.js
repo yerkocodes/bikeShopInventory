@@ -18,4 +18,6 @@ router.get('/api/categories', controllersBikeShop.getCategories);
 
 router.get('/api/brands', controllersBikeShop.getBrands);
 
+router.get('/api/search/:idStore/:idCategory/:idBrands', controllersBikeShop.searchSelect);
+
 module.exports = router;

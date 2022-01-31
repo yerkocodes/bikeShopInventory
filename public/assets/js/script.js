@@ -1,7 +1,8 @@
-const listaMarcas = document.getElementById('listaMarcas');
 const selectStore = document.getElementById('selectStore');
 const selectCategory = document.getElementById('selectCategory');
 const selectBrand = document.getElementById('selectBrand');
+
+const btnSelect = document.getElementById('buttonSelect');
 const URL = `http://localhost:3000`;
 
 let stores = [];
@@ -28,6 +29,20 @@ const getDataBrands = async () => {
 
 //getApiData('stores');
 //getApiData('categories');
+
+const searchSelect = async () => {
+  const response = await fetch(`${URL}/api/search/${selectStore.value}/${selectCategory.value}/${selectBrand.value}`);
+  const data = await response.json();
+  //console.log(data);
+  return data;
+};
+
+btnSelect.addEventListener('click', async () => {
+  //searchSelect();
+  const dataSearch = await searchSelect();
+  //const data = dataSearch.json();
+  console.log(dataSearch);
+});
 
 (async () => {
   await getDataStores();
