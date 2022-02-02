@@ -14,7 +14,7 @@
       <!--Select Tienda-->
       <div class="col-3">
         <label for="selectStore">Tienda</label>
-        <select id="selectStore" class="form-select" aria-label="Default select example">
+        <select id="selectStore" class="form-select" aria-label="Default select example" required>
           <option selected disabled>Seleccione...</option>
         </select>
       </div>
@@ -22,7 +22,7 @@
       <!--Select Categoria-->
       <div class="col-3">
         <label for="selectCategory">Categoria</label>
-        <select id="selectCategory" class="form-select" aria-label="Default select example">
+        <select id="selectCategory" class="form-select" aria-label="Default select example" required>
           <option selected disabled>Seleccione...</option>
         </select>
       </div>
@@ -30,7 +30,7 @@
       <!--Select Marca-->
       <div class="col-3">
         <label for="selectBrand">Marca</label>
-        <select id="selectBrand" class="form-select" aria-label="Default select example">
+        <select id="selectBrand" class="form-select" aria-label="Default select example" required>
           <option selected disabled>Seleccione...</option>
         </select>
       </div>
@@ -39,9 +39,34 @@
       <div class="col-3 d-flex justify-content-center align-items-end">
         <button id="buttonSelect" type="button" class="btn btn-primary w-50">Buscar</button>
       </div>
+
+      <div id="messageError"></div>
     </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
+    <section id="" class="container">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Tienda</th>
+            <th scope="col">ID Producto</th>
+            <th scope="col">Nombre Producto</th>
+            <th scope="col">Inventario</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td>@twitter</td>
+            <td>@twitter</td>
+            <td>@twitter</td>
+            <td>@twitter</td>
+            <td><button>Ver</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

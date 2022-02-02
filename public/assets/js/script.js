@@ -3,6 +3,7 @@ const selectCategory = document.getElementById('selectCategory');
 const selectBrand = document.getElementById('selectBrand');
 
 const btnSelect = document.getElementById('buttonSelect');
+const messageError = document.getElementById('messageError');
 const URL = `http://localhost:3000`;
 
 let stores = [];
@@ -38,15 +39,36 @@ const searchSelect = async () => {
 };
 
 btnSelect.addEventListener('click', async () => {
-  //searchSelect();
+  const tableBody = document.getElementById('tableBody');
   const dataSearch = await searchSelect();
   //const data = dataSearch.json();
-  console.log(dataSearch);
+  //console.log(dataSearch);
+  messageError.innerHTML = "";
+
+  if( dataSearch.length !== 0){
+    tableBody.innerHTML = "";
+    //console.log('OK');
+    for(i = 0; i < dataSearch.length; i++){
+      tableBody.innerHTML += `
+        <tr>
+          <td>${dataSearch[i].store_name}</td>
+          <td>${dataSearch[i].product_id}</td>
+          <td>${dataSearch[i].product_name}</td>
+          <td>${dataSearch[i].quantity}</td>
+          <td><button>Ver</button></td>
+        </tr>
+      `;
+    };
+  } else {
+    console.log('NO');
+    tableBody.innerHTML = "";
+    messageError.innerHTML = `<p class="text-danger mt-3">No se encontraron resultados para esta busqueda</p>`;
+  }
 });
 
 (async () => {
   await getDataStores();
-  console.log(stores);
+  //console.log(stores);
 
   await getDataCategories();
   //console.log(categories);
