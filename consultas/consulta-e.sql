@@ -1,2 +1,0 @@
--- e.- Se requiere un inventario para la tienda Santa Cruz Bike de los productos que tienen en existencia en la categoría Electric Bikes.
-select products.product_id, products.product_name, stocks.quantity from products inner join stocks on products.product_id = stocks.product_id inner join stores on stocks.store_id = stores.store_id inner join categories on categories.category_id = products.category_id where stores.store_name = 'Santa Cruz Bikes' and categories.category_name = 'Electric Bikes';
